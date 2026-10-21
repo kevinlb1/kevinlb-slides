@@ -1,0 +1,13 @@
+[project]
+name = "kevinlb-slides"
+version = "0.1.0"
+description = "PowerPoint templates, the AlertText add-in, fonts and deck tooling"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "lxml>=5.0",
+    "python-pptx>=1.0.2",
+]
+
+[tool.uv]
+package = false

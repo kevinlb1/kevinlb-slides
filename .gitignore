@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+# PowerPoint lock files
+~$*.pptx
+~$*.potx
+# Scratch output from the tools
+*-for-pdf.pptx
+candidate.pptx
+qa/
+backups/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ribbon UI embedded in AlertText.ppam by update-macro-on-change.ps1.
+
+  Add-in macros never appear in the Quick Access Toolbar's "Macros" list, so
+  the add-in brings its own button: an "AI 100" group at the end of the Home
+  tab (a custom group with no insertAfterMso/insertBeforeMso is appended).
+  Keyboard: Alt, H, A, L. Right-click the button and choose "Add to Quick
+  Access Toolbar" for an Alt+digit shortcut.
+-->
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabHome">
+        <group id="ai100Group" getLabel="GroupLabel">
+          <button id="ai100ToggleAlert"
+                  label="Alert"
+                  size="large"
+                  imageMso="TextHighlightColorPicker"
+                  keytip="AL"
+                  screentip="Alert text"
+                  supertip="Cycles the selection: alert 1 (three weights up, Accent 1), then alert 2 (two weights up, Accent 2), then back to the level's own look."
+                  onAction="ToggleAlertRibbon"/>
+          <button id="ai100ToggleBolder"
+                  label="Bolder"
+                  size="large"
+                  imageMso="Bold"
+                  keytip="BL"
+                  screentip="Bolder"
+                  supertip="Two weights up in the same family, colour untouched. Press again to return to the level's weight. Uses the real heavier face, never a synthesised bold."
+                  onAction="ToggleBolderRibbon"/>
+          <button id="ai100StepSmaller"
+                  label="Smaller"
+                  size="large"
+                  imageMso="FontSizeDecrease"
+                  keytip="SM"
+                  screentip="Smaller and lighter"
+                  supertip="Gives the selection the look of the next level deeper (size, weight, lightness) without indenting it. Each press goes one level deeper; after level 5 it returns to the paragraph's own look."
+                  onAction="StepSmallerRibbon"/>
+          <toggleButton id="ai100Watch"
+                  label="Watch"
+                  size="large"
+                  imageMso="ReviewTrackChanges"
+                  keytip="WA"
+                  screentip="Watch bullet levels"
+                  supertip="Keeps alert colours at the level of the bullet they are on. Promote or demote a line and the colour is put right when the cursor leaves the box. Only alerted text is touched, and only its colour and weight; the words are left alone. The correction cannot be undone with Ctrl+Z."
+                  getPressed="WatchPressed"
+                  onAction="ToggleWatchRibbon"/>
+          <button id="ai100FixAlerts"
+                  label="Fix Alerts"
+                  size="large"
+                  imageMso="ColorPickerFontColor"
+                  keytip="FA"
+                  screentip="Fix alert colours everywhere"
+                  supertip="Goes through every slide and puts each alert at the colour its bullet level asks for. For decks edited while Watch was off."
+                  onAction="FixAlertsRibbon"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

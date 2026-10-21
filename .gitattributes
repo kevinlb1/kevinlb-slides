@@ -1,0 +1,13 @@
+# Binary formats. Without this, a misdetection could let end-of-line
+# conversion corrupt a ZIP-based Office file or a font.
+*.pptx  binary
+*.potx  binary
+*.ppam  binary
+*.ttf   binary
+*.otf   binary
+*.pdf   binary
+
+# Scripts that may be run on Linux or macOS stay LF in every checkout.
+*.py    text eol=lf
+*.sh    text eol=lf
+fonts/fonts.conf text eol=lf
